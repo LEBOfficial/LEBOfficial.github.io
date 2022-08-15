@@ -1,0 +1,143 @@
+.topbarDiv {
+    background-color: #1f1d1e;
+    text-align: left;
+    position:absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 80%;
+    order: 3;
+}
+
+.topButtonDiv{
+    background-color: #1f1d1e;
+    text-align: left;
+    position:absolute;
+    top: 0px;
+    left: 15%;
+    right: 0px;
+    bottom: 20%;
+    order: 3;
+}
+
+button.topButton{
+    font-family: Verdana;
+    color: #79FFA3;
+    background-color: #1f1d1e; 
+
+    border-width: 3px; 
+    font-size: 180%; 
+    size: 90%;
+
+    margin-left: 30%; 
+    position: absolute; 
+    vertical-align: baseline; 
+    bottom: 20%;
+
+    border-radius: 10%;
+    border-color:aliceblue;
+
+    order: 4;
+    cursor: pointer;
+}
+
+.fade-in-image {
+    animation: fadeIn 0.5s;
+    animation-timing-function: ease-out;
+    -webkit-animation: fadeIn 0.5s;
+    -webkit-animation-timing-function: ease-out;
+    -moz-animation: fadeIn 0.5s;
+    -moz-animation-timing-function: ease-out;
+    -o-animation: fadeIn 0.5s;
+    -o-animation-timing-function: ease-out;
+    -ms-animation: fadeIn 0.5s;
+    -ms-animation-timing-function: ease-out;
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 1; size: 1000px;}
+    100% { opacity: 0; size: 100%;}
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% { opacity: 1; size: 1000px;}
+    100% { opacity: 0; size: 100%;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% { opacity: 1; size: 1000px;}
+    100% { opacity: 0; size: 100%;}
+  }
+  
+  @-o-keyframes fadeIn {
+    0% { opacity: 1; size: 1000px;}
+    100% { opacity: 0; size: 100%;}
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% { opacity: 1; size: 1000px;}
+    100% { opacity: 0; size: 100%;}
+  }
+
+.fade-in-image{ animation: fadeIn 0.5s;}
+
+.fade-out-image {
+    animation: fadeOut 0.5s;
+    -webkit-animation: fadeOut 0.5s;
+    -moz-animation: fadeOut 0.5s;
+    -o-animation: fadeOut 0.5s;
+    -ms-animation: 0.5s;
+  }
+  
+  @keyframes fadeOut {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-moz-keyframes fadeOut {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-webkit-keyframes fadeOut {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-o-keyframes fadeOut {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-ms-keyframes fadeOut {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+.fade-in-image{ animation: fadeOut 0.5s;}
+
+.main{
+    background-color: #292828;
+    text-align: left;
+
+    position:absolute;
+    top: 20%;
+    left: 15%;
+    right: 15%;
+    bottom: -500px;
+
+    outline: #FFA159 solid 2px;
+}
+
+.games{
+    background-color: #292828;
+    text-align: left;
+
+    position:absolute;
+    top: 20%;
+    left: 15%;
+    right: 15%;
+    bottom: -500px;
+
+    outline: #F929FF solid 2px;
+}
