@@ -3,7 +3,7 @@
 
     <head>
         <title>LEB Dev</title>
-        <link rel="shortcut icon" type = "img/png" href ="image/icon.png" >
+        <link rel="shortcut icon" type = "img/png" href ="img/icon.png" >
         <link rel="stylesheet" href="styles.css">
     </head>
 
@@ -19,26 +19,35 @@
         const home = document.getElementById("home");
         const game = document.getElementById("game");
 
-        setTimeout(() => {
-            home.className ="main fade-in-image";
-            games.className ="game fade-out-image";
-        }, 2000);
+        home.style.display = "block";
+        game.style.display = "block";
 
-        //home.style.display = "block";
-        //game.style.display = "none";
+        home.className ="main fade-in-image";
+        home.style ="z-index : 2";
+        game.className ="games fade-out-image";
+        game.style ="z-index : 1";
+
+        setTimeout(() => {
+            game.style.display = "none";
+        }, 500)
+
     }
     function GamesButton()
     {
         const home = document.getElementById("home");
         const game = document.getElementById("game");
 
-        setTimeout(() => {
-            home.className ="main fade-out-image";
-            games.className ="game fade-in-image";
-        }, 2000);
+        home.style.display = "block";
+        game.style.display = "block";
 
-        //home.style.display = "none";
-        //game.style.display = "block";
+        home.className ="main fade-out-image";
+        home.style ="z-index : 1";
+        game.className ="games fade-in-image";
+        game.style ="z-index : 2";
+
+        setTimeout(() => {
+            home.style.display = "none";
+        }, 500)
     }
 </script>
 
@@ -85,7 +94,7 @@
 
 
 
-<div class="games fade-in-image" id ="game" style ="display: none;">
+<div class="games" id ="game" style ="display: none;">
     <h2 style="text-align: center; color: #FFA159; font-family: Candara; font-size: 200%;">Games</h2>
     <p style="color:azure; font-family: Candara; font-size:120%; position: absolute; left: 10%; right: 10%; text-align: center;">
         Oh hi there! This page is where I post all of my games that I've released on itch.io. Here's a handful:
