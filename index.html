@@ -3,80 +3,42 @@
 
     <head>
         <title>LEB Dev</title>
-        <link rel="shortcut icon" type = "image/png" href ="image/icon.png" >
+        <link rel="shortcut icon" type = "img/png" href ="image/icon.png" >
+        <link rel="stylesheet" href="styles.css">
     </head>
 
 <body style = "background-color: #383637;">
-
 <style>
-    .topbarDiv {
-        background-color: #1f1d1e;
-        text-align: left;
-        position:absolute;
-        top: 0px;
-        left: 0px;
-        right: 0px;
-        bottom: 80%;
-    }
 
-    .topButtonDiv{
-        background-color: #1f1d1e;
-        text-align: left;
-        position:absolute;
-        top: 0px;
-        left: 15%;
-        right: 0px;
-        bottom: 20%;
-    }
-
-    button.topButton{
-        font-family: Verdana;
-        color: #79FFA3;
-        background-color: #1f1d1e; 
-        border-width: 3px; 
-        font-size: 180%; 
-        size: 90%;
-        margin-left: 30%; 
-        position: absolute; 
-        vertical-align: baseline; 
-        bottom: 20%;
-        border-radius: 10%;
-        border-color:aliceblue;
-    }
-
-    .main{
-        background-color: #292828;
-        text-align: left;
-        position:absolute;
-        top: 20%;
-        left: 15%;
-        right: 15%;
-        bottom: -500px;
-        outline: #FFA159 solid 2px;
-    }
-
-    .games{
-        background-color: #292828;
-        text-align: left;
-        position:absolute;
-        top: 20%;
-        left: 15%;
-        right: 15%;
-        bottom: -500px;
-        outline: #F929FF solid 2px;
-    }
 </style>
+
 
 <script>
     function HomeButton()
     {
-        document.getElementById("home").style.display = "block";
-        document.getElementById("game").style.display = "none";
+        const home = document.getElementById("home");
+        const game = document.getElementById("game");
+
+        setTimeout(() => {
+            home.className ="main fade-in-image";
+            games.className ="game fade-out-image";
+        }, 2000);
+
+        //home.style.display = "block";
+        //game.style.display = "none";
     }
     function GamesButton()
     {
-        document.getElementById("home").style.display = "none";
-        document.getElementById("game").style.display = "block";
+        const home = document.getElementById("home");
+        const game = document.getElementById("game");
+
+        setTimeout(() => {
+            home.className ="main fade-out-image";
+            games.className ="game fade-in-image";
+        }, 2000);
+
+        //home.style.display = "none";
+        //game.style.display = "block";
     }
 </script>
 
@@ -85,7 +47,7 @@
     <table>
         <tr>
             <th>
-                <img src = "image/Logo.png" style="bottom: 10%; top:10%; left: 5%; position: absolute; max-width: 100%; max-height: 100%; margin: auto">
+                <img src = "img/Logo.png" style="bottom: 10%; top:10%; left: 5%; position: absolute; max-width: 100%; max-height: 100%; margin: auto">
             </th>
 
             <div class="topButtonDiv">
@@ -109,7 +71,7 @@
     </table>
 </div>
 
-<div class="main" id ="home">
+<div class="main fade-in-image" id ="home">
     <h2 style="text-align: center; color: #FFA159; font-family: Candara; font-size: 200%;">Home</h2>
     <p style="color:azure; font-family: Candara; font-size:120%; position: absolute; margin-left: 10%; margin-right: 10%; text-align: center;">
         Hey there! I'm LEB. I'm an intermediate game developer. I decided to make a website to share my progress with my game development journey.
@@ -123,7 +85,7 @@
 
 
 
-<div class="games" id ="game" style ="display: none;">
+<div class="games fade-in-image" id ="game" style ="display: none;">
     <h2 style="text-align: center; color: #FFA159; font-family: Candara; font-size: 200%;">Games</h2>
     <p style="color:azure; font-family: Candara; font-size:120%; position: absolute; left: 10%; right: 10%; text-align: center;">
         Oh hi there! This page is where I post all of my games that I've released on itch.io. Here's a handful:
@@ -139,8 +101,6 @@
         <br><br>
     </p>
 </div>
-
-
 
 </body>
 </html>
