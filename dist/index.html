@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>LEB Dev</title>
+        <link rel="shortcut icon" type = "image/png" href ="image/icon.png" >
+        HomeButton()
+    </head>
+
+<body style = "background-color: #383637;">
+
+<style>
+    .topbarDiv {
+        background-color: #1f1d1e;
+        text-align: left;
+        position:absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 80%;
+    }
+
+    .topButtonDiv{
+        background-color: #1f1d1e;
+        text-align: left;
+        position:absolute;
+        top: 0px;
+        left: 15%;
+        right: 0px;
+        bottom: 20%;
+    }
+
+    .main{
+        background-color: #292828;
+        text-align: left;
+        position:absolute;
+        top: 20%;
+        left: 15%;
+        right: 15%;
+        bottom: 0%;
+        outline: #FFA159 solid 2px;
+    }
+
+    .games{
+        background-color: #292828;
+        text-align: left;
+        position:absolute;
+        top: 20%;
+        left: 15%;
+        right: 15%;
+        bottom: 0%;
+        outline: #F929FF solid 2px;
+    }
+</style>
+
+<script>
+    function HomeButton()
+    {
+        document.getElementById("home").style.display = "block";
+        document.getElementById("game").style.display = "none";
+    }
+    function GamesButton()
+    {
+        document.getElementById("home").style.display = "none";
+        document.getElementById("game").style.display = "block";
+    }
+</script>
+
+<div class="topbarDiv">
+
+    <table>
+        <tr>
+            <th>
+                <img src = "image/Logo.png" style="bottom: 10%; top:10%; left: 5%; position: absolute; max-width: 100%; max-height: 100%; margin: auto">
+            </th>
+
+            <div class="topButtonDiv">
+                <th>
+                    <button style="font-family:Verdana, Geneva, Tahoma, sans-serif; color: #79FFA3; background-color: #1f1d1e; border-width: 0px; font-size: 180%; margin-left: 30%; position: absolute; vertical-align: baseline; bottom: 20%;">
+                        <b>
+                            Home
+                        </b>
+                    </button>
+                </th> 
+    
+                <th>
+                    <button onclick="GamesButton" style="font-family:Verdana, Geneva, Tahoma, sans-serif; color: #79FFA3; background-color: #1f1d1e; border-width: 0px; font-size: 180%; margin-left: 40%; position: absolute; vertical-align: baseline; bottom: 20%;">
+                        <b>
+                            Games
+                        </b>
+                    </button>
+                </th>
+            </div>
+        </tr>
+    </table>
+</div>
+
+<div class="main" id ="home">
+    <h2 style="text-align: center; color: #FFA159; font-family: Candara; font-size: 200%;">Home</h2>
+    <p style="color:azure; font-family: Candara; font-size:120%; position: absolute; margin-left: 10%; margin-right: 10%; text-align: center;">
+        Hey there! I'm LEB. I'm an intermediate game developer. I decided to make a website to share my progress with my game development journey.
+        <br><br>
+        The Game page is where I share my games through the itch.io website! <br>
+        The Blog page is where I will post all of my updates and news. <br>
+        <br><br>
+        So anyway thank you for checking out the website :)
+    </p>
+</div>
+
+<div class="games" id ="game">
+    hi!
+</div>
+
+
+
+</body>
+</html>
