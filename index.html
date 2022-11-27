@@ -18,9 +18,11 @@
     {
         const home = document.getElementById("home");
         const game = document.getElementById("game");
+        const blog = document.getElementById("blog");
 
         home.style.display = "block";
         game.style.display = "block";
+        blog.style.display ="none";
 
         home.className ="main fade-in-image";
         home.style ="z-index : 2";
@@ -49,6 +51,10 @@
             home.style.display = "none";
         }, 500)
     }
+    function BlogButton()
+    {
+
+    }
 </script>
 
 <div class="topbarDiv">
@@ -72,6 +78,14 @@
                     <button onclick="GamesButton()" class ="topButton" style="margin-left: 40%;">
                         <b>
                             Games
+                        </b>
+                    </button>
+                </th>
+
+                <th>
+                    <button onclick="BlogButton()" class ="topButton" style="margin-left: 50%;">
+                        <b>
+                            Blog
                         </b>
                     </button>
                 </th>
@@ -110,6 +124,8 @@
         <br><br>
     </p>
 </div>
+
+
 
 </body>
 </html>

@@ -141,3 +141,16 @@ button.topButton{
 
     outline: #F929FF solid 2px;
 }
+
+.blog{
+  background-color: #292828;
+  text-align: left;
+
+  position:absolute;
+  top: 20%;
+  left: 15%;
+  right: 15%;
+  bottom: -5000px;
+
+  outline: #79FFA3 solid 2px;
+}
