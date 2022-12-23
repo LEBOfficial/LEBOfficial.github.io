@@ -1,58 +1,11 @@
+:root {
+  --background-color-main: #0C0C0C
+}
+
 body {
-  background-color: black;
-  font-family: Quicksand;
-  color: var(--light-color-alt);
-  font-size: var(--font-size);
-  
-  --light-color: #fff;
-  --light-color-alt: #cbd0e0;
-  --primary-background-color: #131417;
-  --secondary-background-color: #252830;
-  --hover-light-color: var(--light-color);
-  --hover-dark-color: var(--primary-background-color);
-  --font-size: 2rem;
-  --gap: 2rem;
-
-  
+  background-color: var(--background-color-main);
 }
 
-.topbar {
-  background-color: #161616;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-block: 1.5rem;
-}
-
-.menu {
-  position: static;
-  width: initial;
-  padding: initial;
-  background-color: transparent;
-  opacity: 1;
-  transform: scale(1);
-}
-
-.menu > .list {
-  flex-direction: row;
-}
-
-.list {
-  display: flex;
-  align-items: center;
-  gap: var(--gap);
-}
-
-.list-link:hover {
-  color: var(--light-color)
-}
-
-ul {
-  list-style-type: none;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
+div {
+  color: var(--background-color-main);
 }
