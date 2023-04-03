@@ -1,11 +1,139 @@
 :root {
-  --background-color-main: #0C0C0C
+    --primary-background-color: #131513;
+    --secondary-background-color: #1F1E1F;
+    --tertiary-background-color: #2E2F2E;
+
+    --primary-color: #FFFFFF;
+    --secondary-color: #dde;
+
+    --accent-color: #FFD1AF;
 }
 
 body {
-  background-color: var(--background-color-main);
+    background-color: var(--primary-background-color);
+    margin: 0px;
 }
 
-div {
-  color: var(--background-color-main);
+h1, h2, h3, p, a {
+    color: var(--primary-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+a{
+    cursor: pointer;
+}
+
+
+/*------------------------*/
+/*---TOP NAVIGATION BAR---*/
+/*------------------------*/
+.topnav {
+    background-color: var(--secondary-background-color);
+    overflow: hidden;
+}
+.topnav a {
+    font-size: xx-large;
+    transition: all 300ms ease-in-out;
+}
+.nav_container {
+    display: flex;
+    padding: 20px;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    gap:20px;
+    align-items: center;
+}
+.nav_items {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    gap:20px;
+    align-items: center;
+}
+.topnav_item_active {
+    background-color: var(--accent-color);
+    border-radius: 10px;
+    color: var(--tertiary-background-color);
+    padding: 5px 10px 5px 10px;
+}
+
+
+/*-----------------------*/
+/*-------MAIN PAGE-------*/
+/*-----------------------*/
+.page {
+    position: relative;
+    bottom: 0%;
+    padding: 10px;
+    min-width: fit-content;
+}
+
+
+/*---------------*/
+/*---HOME PAGE---*/
+/*---------------*/
+.custom_quote {
+    background: linear-gradient(to right, #FFA159, #8F51FF);
+    background-size: 200%;
+    background-position: 0% 0%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: quote_hover 5s ease-in-out infinite;
+}
+
+.custom_about_me{
+    text-align:center;
+}
+
+.custom_social_div{
+    text-align:center;
+    animation: 1s ease-out fade_in 100ms;
+}
+        
+.custom_socials{
+    margin:0px;
+    text-decoration: none;
+}
+        
+.custom_socials > img{
+    transition: all 200ms ease-in;
+    transform: scale(1);
+    transform: scaleX(98%);
+    width:100px;
+    filter: opacity(80%);
+}
+        
+.custom_socials > img:hover{
+    transition: all 100ms ease-in;
+    transform: scale(1.1);
+    filter: opacity(100%);
+    transform: scaleX(101%);
+}
+
+@keyframes quote_hover
+{
+    0%{
+        background-position: 0% 0%;
+    }
+    50%{
+        background-position: 100% 100%;
+    }
+    100%{
+        background-position: 0% 0%;
+    }
+}
+
+@keyframes fade_in{
+    0%{
+    transform: translateX(-5%);
+    opacity: 0;
+    }
+    50%{
+    opacity: 0;
+    }
+    100%{
+    transform: translateX(0%);
+    opacity: 1;
+    }
 }
