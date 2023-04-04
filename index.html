@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LEB Web</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="/img/icon.png">
+    <link rel="icon" type="image/x-icon" href="img/icon.png">
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
@@ -26,35 +26,46 @@
                 <a style="font-size: 40px;">LEB</a>
             </div>
             <div class="nav_items">
-                <a class="nav_item topnav_item_active" onclick="nav_click('$home')" id="$home">Home</a>
+                <a class="nav_item topnav_active" onclick="nav_click('$home')" id="$home">Home</a>
                 <a class="nav_item" onclick="nav_click('$games')" id="$games">Games</a>
                 <a class="nav_item" onclick="nav_click('$about')" id="$about">About</a>
+                <a class="nav_item" onclick="switch_appearance()"><img src="img/night.png" style="width: 30px; display: flex; align-items: center;"></a>
             </div>
         </div>
     </nav>
 
-
-
     <section class="page">
-        <p class="custom_about_me custom_quote" style="font-size:xx-large;"><strong>
-            "Just Another Game Dev "</strong>
-            </p>
-            <p class="custom_about_me">
-            Hi there! I am just another game dev. I make games, art and music. <br>
-            </p>
-            <p class="custom_about_me" style="font-size: 2rem; margin:0%">Socials:</p>
-            <div class="custom_social_div">
-            <a class="custom_socials" href="https://www.youtube.com/@LEB_Dev">
-            <img src="https://i.imgur.com/6Pm49kk.png">
-            </a>
-            <a class="custom_socials" href="https://twitter.com/DaRealLEB">
-            <img src="https://i.imgur.com/KYa0BOQ.png">
-            </a>
-            <a class="custom_socials" href="https://linktr.ee/leb_dev">
-            <img src="https://i.imgur.com/53xtuvM.png">
-            </a>
-            </div>
+
+        <div class="home_page active_page" id="home">
+            <p class="custom_about_me custom_quote" style="font-size:xx-large;"><strong>
+                "Just Another Game Dev "</strong>
+                </p>
+                <p class="custom_about_me">
+                Hi there! I am just another game dev. I make games, art and music. <br>
+                </p>
+                <p class="custom_about_me" style="font-size: 2rem; margin:0%">Socials:</p>
+                <div class="custom_social_div">
+                <a class="custom_socials" href="https://www.youtube.com/@LEB_Dev">
+                <img src="https://i.imgur.com/6Pm49kk.png">
+                </a>
+                <a class="custom_socials" href="https://twitter.com/DaRealLEB">
+                <img src="https://i.imgur.com/KYa0BOQ.png">
+                </a>
+                <a class="custom_socials" href="https://linktr.ee/leb_dev">
+                <img src="https://i.imgur.com/53xtuvM.png">
+                </a>
+                </div>
+        </div>
+
+        <div class="game_page" id="game">
+            <p>GAMES! OMG</p>
+        </div>
+
+        <div class="about_page" id="about">
+            <p>Wait... OMG ITS AN ABOUT!!</p>
+        </div>
     </section>
+
 
 
 

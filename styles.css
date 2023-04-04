@@ -1,4 +1,20 @@
 :root {
+    --primary-background-color-dark: #131513;
+    --secondary-background-color-dark: #1F1E1F;
+    --tertiary-background-color-dark: #2E2F2E;
+
+    --primary-color-dark: #FFFFFF;
+    --secondary-color-dark: #dde;
+
+    --primary-background-color-light: #E3E5E3;
+    --secondary-background-color-light: #EFEEEF;
+    --tertiary-background-color-light: #FEFFFE;
+
+    --primary-color-light: #000;
+    --secondary-color-light: #113;
+
+
+
     --primary-background-color: #131513;
     --secondary-background-color: #1F1E1F;
     --tertiary-background-color: #2E2F2E;
@@ -21,6 +37,10 @@ h1, h2, h3, p, a {
 
 a{
     cursor: pointer;
+}
+
+* {
+    transition: all 200ms ease-in-out;
 }
 
 
@@ -50,7 +70,7 @@ a{
     gap:20px;
     align-items: center;
 }
-.topnav_item_active {
+.topnav_active {
     background-color: var(--accent-color);
     border-radius: 10px;
     color: var(--tertiary-background-color);
@@ -66,29 +86,44 @@ a{
     bottom: 0%;
     padding: 10px;
     min-width: fit-content;
+    display: grid;
+}
+
+.home_page, .game_page, .about_page {
+    grid-column: 1;
+    grid-row: 1;
+    bottom: 0%;
+    opacity: 0%;
+}
+
+.active_page {
+    opacity: 100%;
 }
 
 
 /*---------------*/
 /*---HOME PAGE---*/
 /*---------------*/
+.custom_about_me{
+    text-align:center;
+    animation: 1s ease-out fade_in 100ms;
+    font-size: 1rem;
+}
+
 .custom_quote {
     background: linear-gradient(to right, #FFA159, #8F51FF);
-    background-size: 200%;
+    background-size: 100%;
     background-position: 0% 0%;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: quote_hover 5s ease-in-out infinite;
-}
-
-.custom_about_me{
-    text-align:center;
+    animation: 1s ease-out fade_in 0ms;
+    font-size: 3rem;
 }
 
 .custom_social_div{
     text-align:center;
-    animation: 1s ease-out fade_in 100ms;
+    animation: 1s ease-out fade_in 200ms;
 }
         
 .custom_socials{
@@ -109,19 +144,6 @@ a{
     transform: scale(1.1);
     filter: opacity(100%);
     transform: scaleX(101%);
-}
-
-@keyframes quote_hover
-{
-    0%{
-        background-position: 0% 0%;
-    }
-    50%{
-        background-position: 100% 100%;
-    }
-    100%{
-        background-position: 0% 0%;
-    }
 }
 
 @keyframes fade_in{
