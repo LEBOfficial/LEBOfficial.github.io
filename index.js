@@ -31,26 +31,7 @@ function nav_click(nav_i)
     }
 }
 
-var appearance = -1;
 function switch_appearance()
 {
-    appearance *= -1;
-
-    switch (appearance)
-    {
-        case 1:
-            document.styleSheets[0].rules[0].style.setProperty("--primary-background-color", "--primary-background-color-light");
-            document.styleSheets[0].rules[0].style.setProperty("--secondary-background-color", "--secondary-background-color-light");
-            document.styleSheets[0].rules[0].style.setProperty("--tertiary-background-color", "--tertiary-background-color-light");
-
-            document.styleSheets[0].rules[0].style.setProperty("--primary-color", "--primary-color-light");
-            document.styleSheets[0].rules[0].style.setProperty("--secondary-color", "--secondary-color-light");
-        case -1:
-            document.styleSheets[0].rules[0].style.setProperty("--primary-background-color", "--primary-background-color-dark");
-            document.styleSheets[0].rules[0].style.setProperty("--secondary-background-color", "--secondary-background-color-dark");
-            document.styleSheets[0].rules[0].style.setProperty("--tertiary-background-color", "--tertiary-background-color-dark");
-
-            document.styleSheets[0].rules[0].style.setProperty("--primary-color", "--primary-color-dark");
-            document.styleSheets[0].rules[0].style.setProperty("--secondary-color", "--secondary-color-dark");
-    }
+    document.body.classList.toggle("light-theme");
 }

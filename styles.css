@@ -1,26 +1,11 @@
 :root {
-    --primary-background-color-dark: #131513;
-    --secondary-background-color-dark: #1F1E1F;
-    --tertiary-background-color-dark: #2E2F2E;
-
-    --primary-color-dark: #FFFFFF;
-    --secondary-color-dark: #dde;
-
-    --primary-background-color-light: #E3E5E3;
-    --secondary-background-color-light: #EFEEEF;
-    --tertiary-background-color-light: #FEFFFE;
-
-    --primary-color-light: #000;
-    --secondary-color-light: #113;
-
-
-
     --primary-background-color: #131513;
     --secondary-background-color: #1F1E1F;
     --tertiary-background-color: #2E2F2E;
 
     --primary-color: #FFFFFF;
     --secondary-color: #dde;
+
 
     --accent-color: #FFD1AF;
 }
@@ -30,7 +15,7 @@ body {
     margin: 0px;
 }
 
-h1, h2, h3, p, a {
+h1, h2, h3, h4, h5, h6, p, a {
     color: var(--primary-color);
     font-family: 'Poppins', sans-serif;
 }
@@ -43,6 +28,13 @@ a{
     transition: all 200ms ease-in-out;
 }
 
+/*THEMING*/
+body.light-theme{
+    --primary-color: #3d3d3d;
+    --secondary-color: rgba(0,0,0,.6);
+    --primary-background-color: #fff;
+    --secondary-background-color: #e1e1e1;
+}
 
 /*------------------------*/
 /*---TOP NAVIGATION BAR---*/
@@ -94,10 +86,12 @@ a{
     grid-row: 1;
     bottom: 0%;
     opacity: 0%;
+    display: none;
 }
 
 .active_page {
     opacity: 100%;
+    display: block;
 }
 
 
@@ -106,8 +100,10 @@ a{
 /*---------------*/
 .custom_about_me{
     text-align:center;
-    animation: 1s ease-out fade_in 100ms;
+    animation: 1s ease-out fade_in;
     font-size: 1rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .custom_quote {
@@ -117,13 +113,15 @@ a{
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: 1s ease-out fade_in 0ms;
+    animation: 1s ease-out fade_in;
     font-size: 3rem;
+    width: max-content;
+    text-align: center;
 }
 
 .custom_social_div{
     text-align:center;
-    animation: 1s ease-out fade_in 200ms;
+    animation: 1s ease-out fade_in;
 }
         
 .custom_socials{
