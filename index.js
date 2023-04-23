@@ -40,5 +40,5 @@ deleter = () => {
     }
 }
 
-//window.addEventListener("load", typer());
+window.addEventListener("load", typer());
 //#endregion

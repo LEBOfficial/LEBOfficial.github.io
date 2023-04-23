@@ -154,7 +154,7 @@ dP     dP `88888P8 8888P'   dP `8888P88 `88888P8   dP   dP `88888P' dP    dP    
     right: 0px;
     padding: 10px;
     padding-inline: 5vmax;
-    border-bottom: var(--secondary-background-color) 1px solid;
+    
     align-items: center;
     justify-content: space-between;
     background: rgba(0, 0, 0, 0.4);
@@ -389,4 +389,11 @@ dP dP    dP 8888P'   `88888P8 `88888P8 `88888P' dP
     to {
         transform: translateX(-8vmin);
     }
+}
+
+.i-make-games-text {
+    background: linear-gradient(to right, #FFA159, #8F51FF);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
