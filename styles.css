@@ -1,23 +1,85 @@
 :root {
-    --primary-background-color: #131513;
-    --secondary-background-color: #1F1E1F;
-    --tertiary-background-color: #2E2F2E;
+    --primary-background-color: #000;
+    --secondary-background-color: #202020;
 
-    --primary-color: #FFFFFF;
-    --secondary-color: #dde;
+    --primary-color: #DDD;
 
 
-    --accent-color: #FFD1AF;
+    --color-1: #FFA159;
+    --color-2: #8F51FF;
+    --color-3: #F929FF;
+    --color-4: #79FFA3;
 }
 
 body {
     background-color: var(--primary-background-color);
     margin: 0px;
+    
+    height: 100%;
+    width: 100%;
+
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6, p, a {
+/*THEMING*/
+body.light-theme{
+    --primary-color: #000;
+
+
+    --primary-background-color: #eee;
+    --secondary-background-color: #c5c5c5;
+
+    --color-1: #7F502C;
+    --color-2: #47287F;
+    --color-3: #7B157F;
+    --color-4: #3D7F51;
+}
+
+section {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10vmin;
+    flex-wrap: wrap;
+}
+
+h1, h2, h3, h4, h5, a, i, p, span {
     color: var(--primary-color);
     font-family: 'Poppins', sans-serif;
+    margin: 0px;
+    margin-inline: auto;
+    margin-top: 5vmin;
+}
+
+h1 {
+    font-size: 10vmin;
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+}
+
+h3, h4 {
+    font-size: 4vmin;
+    font-weight: 300;
+    font-family: "Rubik";
+    margin-inline: 30vmin;
+}
+
+h6, p {
+    font-size: 2vmin;
+    font-weight: 200;
+    font-family: "Rubik";
+}
+
+span {
+    margin-inline: auto;
+}
+
+i {
+    font-size: 40px;
 }
 
 a{
@@ -25,135 +87,306 @@ a{
 }
 
 * {
-    transition: all 200ms ease-in-out;
-}
-
-/*THEMING*/
-body.light-theme{
-    --primary-color: #3d3d3d;
-    --secondary-color: rgba(0,0,0,.6);
-    --primary-background-color: #fff;
-    --secondary-background-color: #e1e1e1;
-}
-
-/*------------------------*/
-/*---TOP NAVIGATION BAR---*/
-/*------------------------*/
-.topnav {
-    background-color: var(--secondary-background-color);
-    overflow: hidden;
-}
-.topnav a {
-    font-size: xx-large;
     transition: all 300ms ease-in-out;
 }
-.nav_container {
-    display: flex;
-    padding: 20px;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    gap:20px;
-    align-items: center;
+
+
+/*
+ 888888ba  dP          dP       
+ 88    `8b 88          88       
+a88aaaa8P' 88 .d8888b. 88d888b. 
+ 88   `8b. 88 88'  `88 88'  `88 
+ 88    .88 88 88.  .88 88.  .88 
+ 88888888P dP `88888P' 88Y8888'
+*/
+@keyframes rotate {
+    from {
+        rotate: 0deg;
+    }
+
+    50% {
+        scale: 1 1.5;
+    }
+
+    to {
+        rotate: 360deg;
+    }
 }
-.nav_items {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-end;
-    gap:20px;
-    align-items: center;
+  
+#blob {
+    background-color: white;
+    height: 60vmin;
+    aspect-ratio: 1;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    background: linear-gradient(to right, var(--color-1), var(--color-2));
+    animation: rotate 20s infinite;
+    opacity: 0.8;
+    z-index: -5;
 }
-.topnav_active {
-    background-color: var(--accent-color);
-    border-radius: 10px;
-    color: var(--tertiary-background-color);
-    padding: 5px 10px 5px 10px;
+  
+#blur {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: -3;
+    backdrop-filter: blur(25vmin);
 }
 
 
-/*-----------------------*/
-/*-------MAIN PAGE-------*/
-/*-----------------------*/
-.page {
-    position: relative;
-    bottom: 0%;
+
+/*
+888888ba                    oo                     dP   oo                       888888ba                    
+88    `8b                                          88                            88    `8b                   
+88     88 .d8888b. dP   .dP dP .d8888b. .d8888b. d8888P dP .d8888b. 88d888b.    a88aaaa8P' .d8888b. 88d888b. 
+88     88 88'  `88 88   d8' 88 88'  `88 88'  `88   88   88 88'  `88 88'  `88     88   `8b. 88'  `88 88'  `88 
+88     88 88.  .88 88 .88'  88 88.  .88 88.  .88   88   88 88.  .88 88    88     88    .88 88.  .88 88       
+dP     dP `88888P8 8888P'   dP `8888P88 `88888P8   dP   dP `88888P' dP    dP     88888888P `88888P8 dP       
+                                    .88                                                                      
+                                d8888P
+*/
+.navbar {
+    display: flex;
+    left: 0px;
+    right: 0px;
     padding: 10px;
-    min-width: fit-content;
-    display: grid;
+    padding-inline: 5vmax;
+    border-bottom: var(--secondary-background-color) 1px solid;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.4);
 }
 
-.home_page, .game_page, .about_page {
-    grid-column: 1;
-    grid-row: 1;
-    bottom: 0%;
-    opacity: 0%;
-    display: none;
+.nav-misc-container {
+    display: flex;
+    justify-content: flex-start;
 }
 
-.active_page {
-    opacity: 100%;
-    display: block;
+.nav-buttons-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-item {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 20px;
+    display: flex;
+    flex-grow: 50px;
+    padding: 5px;
+}
+
+.nav-btn {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 20px;
+    display: flex;
+    flex-grow: 50px;
+    padding: 5px;
+    font-size: x-large;
 }
 
 
-/*---------------*/
-/*---HOME PAGE---*/
-/*---------------*/
-.custom_about_me{
+
+
+/*---I'm _____ ----*/
+
+.im-text {
+    margin:auto;
     text-align:center;
-    animation: 1s ease-out fade_in;
-    font-size: 1rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin-top:10vmin;
+    font-weight: 200;
+    font-size: 10vmin;
+}
+#im-cursor {
+    animation: cursor-blinking 1s ease infinite;
 }
 
-.custom_quote {
-    background: linear-gradient(to right, #FFA159, #8F51FF);
-    background-size: 100%;
-    background-position: 0% 0%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: 1s ease-out fade_in;
-    font-size: 3rem;
-    width: max-content;
-    text-align: center;
-}
-
-.custom_social_div{
-    text-align:center;
-    animation: 1s ease-out fade_in;
-}
-        
-.custom_socials{
-    margin:0px;
-    text-decoration: none;
-}
-        
-.custom_socials > img{
-    transition: all 200ms ease-in;
-    transform: scale(1);
-    transform: scaleX(98%);
-    width:100px;
-    filter: opacity(80%);
-}
-        
-.custom_socials > img:hover{
-    transition: all 100ms ease-in;
-    transform: scale(1.1);
-    filter: opacity(100%);
-    transform: scaleX(101%);
-}
-
-@keyframes fade_in{
-    0%{
-    transform: translateX(-5%);
-    opacity: 0;
+@keyframes cursor-blinking {
+    from {
+        opacity: 100%;
     }
-    50%{
-    opacity: 0;
+    50% {
+        opacity: 0%;
     }
-    100%{
-    transform: translateX(0%);
+    to {
+        opacity: 100%;
+    }
+}
+/*
+ a88888b.                         dP          
+d8'   `88                         88          
+88        .d8888b. 88d888b. .d888b88 .d8888b. 
+88        88'  `88 88'  `88 88'  `88 Y8ooooo. 
+Y8.   .88 88.  .88 88       88.  .88       88 
+ Y88888P' `88888P8 dP       `88888P8 `88888P'
+*/
+
+.card-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1vmax;
+    margin-top: 10vmin;
+    flex-direction: row;
+  }
+  
+  .card {
+    aspect-ratio: 1 / 1.2;
+    border: 0.3vw solid #202020;
+    border-radius: 2vw;
+    cursor: pointer;
+    position: relative;
+    width: 38vmin;
+  }
+  
+  .card:hover:before {
+    background-position: 100% 100%;
+    transform: scale(1.1, 1.05);
+  }
+  
+  .card:hover > .card-content {
+    background-position: -10% 0%;
+  }
+  
+  .card:hover > .card-icon {
+    color: white; 
+  }
+  
+  .card:hover > .card-content > .card-subtitle{  
     opacity: 1;
+    transform: translateY(0%);
+    transition: opacity 500ms, transform 400ms ease;
+  }
+  
+  .card:hover > .card-content > .card-title {
+    color: black;
+    transition: color 500ms ease;
+  }
+  
+  .card:before {
+    background: linear-gradient(
+      130deg, 
+      transparent 0% 33%, 
+      var(--color-2) 66%, 
+      var(--color-3) 83.5%, 
+      var(--color-1) 100%
+    );
+    background-position: 0% 0%;
+    background-size: 300% 300%;
+    border-radius: 5vmin;
+    content: "";
+    height: 100%;
+    left: 0px;
+    pointer-events: none;
+    position: absolute;
+    top: 0px;
+    transition: background-position 350ms ease, transform 350ms ease;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  .card-content {
+    background-image: radial-gradient(
+      rgba(255, 255, 255, 0.4) 8%, 
+      transparent 8%
+    );
+    background-position: 0% 0%;
+    background-size: 5vmin 5vmin;
+    height: calc(100% - 10vmin);
+    padding: 5vmin;
+    position: relative;
+    transition: background-position 350ms ease;
+    width: calc(100% - 10vmin);
+    z-index: 2;
+  }
+  
+  .card-title,
+  .card-subtitle {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    margin: 0px;
+    user-select: none;
+    text-align: start;
+  }
+  
+  .card-title {
+    font-size: 5vmin;
+    color: white;
+  }
+  
+  .card-subtitle {
+    font-size: 2.5vmin;
+    margin-top: 1vmin;
+    opacity: 0%;
+    transform: translate(5vmin, 2vmin);
+    color: black;
+  }
+  
+  
+  .card-icon {
+    bottom: 0px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 7vmin;
+    left: 0px;
+    margin: 5vmin;
+    position: absolute;
+    transition: transform 300ms, color 250ms ease;
+    z-index: 2;
+    transform: scale(0.6, 0.6);
+  }
+  
+  .card:hover > .card-content > .card-icon {
+    color: rgba(255, 255, 255, 1);
+    transform: scale(1, 1);
+  }
+
+
+
+/*
+dP                                  dP                   
+88                                  88                   
+88 88d888b. dP   .dP .d8888b. .d888b88 .d8888b. 88d888b. 
+88 88'  `88 88   d8' 88'  `88 88'  `88 88ooood8 88'  `88 
+88 88    88 88 .88'  88.  .88 88.  .88 88.  ... 88       
+dP dP    dP 8888P'   `88888P8 `88888P8 `88888P' dP
+*/
+
+.invader {
+    width: 20vmin;
+    height: 21.33vmin;
+    overflow: hidden;
+    margin:auto;
+    animation: invader_move linear 2s infinite;
+}
+.invader > img {
+    animation: 1s invadersprite_move steps(8) infinite;
+    image-rendering: pixelated;
+    width: 160vmin;
+    height: 21.33vmin;
+    aspect-ratio: 1;
+}
+
+@keyframes invadersprite_move{
+    from {
+        transform: translate3d(0px, 0, 0);
+    }
+    to {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+@keyframes invader_move {
+    from {
+        transform: translateX(-8vmin);
+    }
+    50% {
+        transform: translateX(8vmin);
+    }
+    to {
+        transform: translateX(-8vmin);
     }
 }

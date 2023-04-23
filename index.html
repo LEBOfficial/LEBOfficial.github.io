@@ -9,75 +9,70 @@
     <link rel="icon" type="image/x-icon" href="img/icon.png">
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Rubik&family=Quicksand&family=Lexend&display=swap');
     </style>
-    <script src="index.js"></script>
+    <script src="https://kit.fontawesome.com/789f23fd60.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    
+    <div id="blob"></div>
+    <div id="blur"></div>
+    
+    <script src="blob.js"></script>
 
 
-    <!-- ------------------ -->
-    <!-- TOP NAVIGATION BAR -->
-    <!-- ------------------ -->
-    <nav class="topnav">
-        <div class="nav_container">
-            <div class="nav_items">
-                <a><img src="img/Logo.png" style="width: 70px; display: flex; align-items: center;"></a>
-                <a style="font-size: 40px;">LEB</a>
-            </div>
-            <div class="nav_items">
-                <a class="nav_item topnav_active" onclick="nav_click('$home')" id="$home">Home</a>
-                <a class="nav_item" onclick="nav_click('$games')" id="$games">Games</a>
-                <a class="nav_item" onclick="nav_click('$about')" id="$about">About</a>
-                <a class="nav_item" onclick="switch_appearance()"><img src="img/night.png" style="width: 30px; display: flex; align-items: center;"></a>
-            </div>
+
+    <nav class="navbar">
+        <div class="nav-misc-container">
+            <img src="img/icon.png" style="width: 80px; height: auto;">
+            <h1 class="nav-item" style="font-size: 300%">LEB</h1>
+            <!--<a class="nav-item" onclick="switch_appearance()" style="margin-top: auto; margin-bottom: auto; margin-left: 5px;">
+                <i class="fa-solid fa-moon" id="theme-btn"></i>
+            </a> -->
+        </div>
+        
+        <div class="nav-buttons-container">
+            <a class="nav-btn">Home</a>
+            <a class="nav-btn">Games</a>
         </div>
     </nav>
 
-    <section class="page">
+    <p class="im-text" id="msg">I'm LEB</p>
 
-        <div class="home_page active_page" id="home">
-            <p class="custom_about_me custom_quote" style="font-size:xx-large;"><strong>
-                "Just Another Game Dev "</strong>
-                </p>
-                <p class="custom_about_me">
-                Hi there! I am just another game dev. I make games, art and music. <br>
-                </p>
-                <p class="custom_about_me" style="font-size: 2rem; margin:0%">Socials:</p>
-                <div class="custom_social_div">
-                <a class="custom_socials" href="https://www.youtube.com/@LEB_Dev">
-                    <img src="img/socials/youtube.png">
-                </a>
-                <a class="custom_socials" href="https://twitter.com/DaRealLEB">
-                    <img src="img/socials/twitter.png">
-                </a>
-                <a class="custom_socials" href="https://linktr.ee/leb_dev">
-                    <img src="img/socials/linktree.png">
-                </a>
-                <a class="custom_socials" href="https://mastodon.gamedev.place/@LEB_Dev">
-                    <img src="img/socials/mastodon.png">
-                </a>
-                <a class="custom_socials" href="https://leb-dev.itch.io">
-                    <img src="img/socials/itch-io.png">
-                </a>
-                </div>
+    <script src="index.js"></script>
 
-                <h5 style="margin-top: 80px; font-size: 1.6rem;" class="custom_about_me">Have you played my latest game?<br>
-                    <iframe frameborder="0" src="https://itch.io/embed/1871531?linkback=true&amp;border_width=5&amp;bg_color=c3ccf3&amp;fg_color=222222&amp;link_color=b9337c&amp;border_color=3b4c7c" width="216" height="175"><a href="https://azraei.itch.io/john-otterman">John Otterman by AzraeI, Sul_iac, blhomstein, LEB, Alimzhan1212, mintwatercolor, FireSpark27, Space Sorcerer Studio</a></iframe>
-                </h5>
+    <section class="card-container">
+        <div class="card">
+            <div class="card-content">
+                <h1 class="card-title">A Game Developer</h1>
+                <h3 class="card-subtitle">That makes 2D & 3D games</h3>
+                <i class="fa-solid fa-gamepad card-icon"></i>
+            </div>
         </div>
-
-        <div class="game_page" id="game">
-            <h1>Here are a list of all of my games I've helped create:</h1>
+        <div class="card">
+            <div class="card-content">
+                <h1 class="card-title">An Artist</h1>
+                <h3 class="card-subtitle">That makes digital art & VFX</h3>
+                <i class="fa-solid fa-brush card-icon"></i>
+            </div>
         </div>
-
-        <div class="about_page" id="about">
-            <p>Wait... OMG ITS AN ABOUT!!</p>
+        <div class="card">
+            <div class="card-content">
+                <h1 class="card-title">A Musician</h1>
+                <h3 class="card-subtitle">That makes songs and SFX</h3>
+                <i class="fa-solid fa-headphones-simple card-icon"></i>
+            </div>
         </div>
     </section>
-
-
-
-
+    <section>
+        
+        <h1>I make <span style="background: linear-gradient(to right, #FFA159, #8F51FF); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">games</span> for fun!</h1>
+        <div class="invader">
+            <img src="img/invader.png">
+        </div>
+        <h4 style="text-align:center; margin-inline: 10vmax; margin-top: 0px;">I love creating games for people!</h4>
+    </section>
+    
 </body>
+
 </html>

@@ -1,37 +1,44 @@
-function nav_click(nav_i)
-{
-    const homePage = document.getElementById("home");
-    const gamePage = document.getElementById("game");
-    const aboutPage = document.getElementById("about");
-
-    const new_active = document.getElementById(nav_i);
-
-    document.getElementById("$home").className = "nav_item";
-    document.getElementById("$games").className = "nav_item";
-    document.getElementById("$about").className = "nav_item";
-
-    new_active.classList.add("topnav_active");
-
-    switch (new_active.id) {
-        case "$home":
-            homePage.className = "home_page active_page";
-            gamePage.className = "game_page";
-            aboutPage.className = "about_page";
-            return;
-        case "$games":
-            homePage.className = "home_page";
-            gamePage.className = "game_page active_page";
-            aboutPage.className = "about_page";
-            return;
-        case "$about":
-            homePage.className = "home_page";
-            gamePage.className = "game_page";
-            aboutPage.className = "about_page active_page";
-            return;
-    }
-}
-
 function switch_appearance()
 {
     document.body.classList.toggle("light-theme");
 }
+
+//#region TYPEWRITER I'M _______
+var texts = ["Game Developer", "Artist", "Musician", "I'm LEB"];
+var currentText = 0;
+var textPosition = 0;
+
+var typing_speed = 100;
+var deleting_speed = 50;
+var waiting_speed = 800;
+
+var deleting = false;
+
+typer = () => {
+    document.getElementById("msg").innerHTML = texts[currentText].substring(0, textPosition) + '<span id="im-cursor">\u25ae</span>';
+
+    if (textPosition++ != texts[currentText].length) {
+        setTimeout(typer, typing_speed);
+    } 
+    else 
+    {
+        if (currentText == 3) return;
+        deleting = true;
+        setTimeout(deleter, waiting_speed);
+    }
+}
+deleter = () => {
+    document.getElementById("msg").innerHTML = texts[currentText].substring(0, textPosition) + '<span id="im-cursor">\u21e6</span>';
+    if (textPosition-- != 0) {
+        setTimeout(deleter, deleting_speed);
+    }
+    else {
+        deleting = false;
+        setTimeout(typer, waiting_speed);
+
+        currentText++;
+    }
+}
+
+//window.addEventListener("load", typer());
+//#endregion
