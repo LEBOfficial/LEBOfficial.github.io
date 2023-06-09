@@ -457,9 +457,7 @@ Y8.   .88 88.  .88 88  88  88 88.  ...       88
     cursor: pointer;
     position: relative;
     width: 40vmin;
-    /*background: linear-gradient(45deg, var(--primary-background-color) 74.9%, var(--primary-color) 75%, var(--primary-color) 77%, var(--primary-background-color) 77.1%);*/
     background: linear-gradient(45deg, #FFA159, #8F51FF);
-    background-size: 100% 100%;
     
     text-align: center;
 
