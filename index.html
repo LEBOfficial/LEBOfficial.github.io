@@ -2,151 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://lebofficial.github.io/">
-    <meta content="lebofficial.github.io" property="og:site_name">
-    <meta property="og:title" content="LEB">
-    
-    <meta property="og:description" content="My website where I share games and might transform into a portfolio.">
-    <meta name="description" content="My website where I share games and might transform into a portfolio.">
-    <meta property="og:image" content="https://i.imgur.com/b8N3u0e.png">
-    <meta property="twitter:image" content="https://i.imgur.com/b8N3u0e.png">
 
-    <meta name="theme-color" content="#FFA159">
-
-    <title>LEB Web</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="img/icon.png">
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Rubik&family=Quicksand&family=Lexend&display=swap');
-    </style>
-    <script src="https://kit.fontawesome.com/789f23fd60.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <title>LEB</title>
 </head>
 <body>
+    <div class="tape"></div>
+    <div class="wrapper">
+        <h1>CONSTRUCTION</h1>
+        <h3>This page is currently under construction.</h3>
+        <h5>- 16th of July 2023 -</h5>
 
-    <div id="clipboard-mouse"><h3>Copied!</h3></div>
-
-    <nav class="navbar">
-        <div class="nav-misc-container">
-            <img src="img/icon.png" style="width: 80px; height: 80px;">
-            <!--<a class="nav-item" onclick="switch_appearance()" style="margin-top: auto; margin-bottom: auto; margin-left: 5px;">
-                <i class="fa-solid fa-moon" id="theme-btn"></i>
-            </a> -->
-        </div>
-        
-        <div class="nav-buttons-container">
-            <a class="nav-btn selected" onclick="nav_btn_click(0)" data-section="home-section">Home</a>
-            <a class="nav-btn" onclick="nav_btn_click(1)" data-section="game-section">Games</a>
-            <a class="nav-btn" onclick="nav_btn_click(2)" data-section="contact-section">Contact</a>
-            <a class="nav-menu-opener" id="nav-menu-opener"><i class="fa-solid fa-bars"></i></a>
-        </div>
-    </nav>
-    <div class="nav-menu" id="nav-menu">
-        <a class="nav-menu-btn selected" onclick="nav_btn_click(0)" data-section="home-section">Home</a>
-        <a class="nav-menu-btn" onclick="nav_btn_click(1)" data-section="game-section">Games</a>
-        <a class="nav-menu-btn" onclick="nav_btn_click(2)" data-section="contact-section">Contact</a>
+        <a href="https://leb-dev.itch.io">https://leb-dev.itch.io</a>
     </div>
-    <main id="main">
-        <section class="home-section" id ="home-section">
-            <h1 style="font-family: Lexend">LEB</h1>
-            <div class="card-container">
-                <div class="card">
-                    <div class="card-content">
-                        <h1 class="card-title">A Game Developer</h1>
-                        <h3 class="card-subtitle">Who makes 2D & 3D games</h3>
-                        <i class="fa-solid fa-gamepad card-icon"></i>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <h1 class="card-title">An Artist</h1>
-                        <h3 class="card-subtitle">Who makes digital art & VFX</h3>
-                        <i class="fa-solid fa-brush card-icon"></i>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <h1 class="card-title">A Musician</h1>
-                        <h3 class="card-subtitle">Who makes songs and SFX</h3>
-                        <i class="fa-solid fa-headphones-simple card-icon"></i>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-    
-        <section class="game-section" id="game-section">
-            <h1>GAMES</h1>
-            <h3>Check out some of my games!</h3>
-            <div class="games-container">
-                <a class="game-card" href="https://leb-dev.itch.io/beep-beep" target="_blank">
-                    <div class="game-content">
-                        <img class="game-thumbnail" src="img/games/beep_beep.png">
-                        <div class="game-data">
-                            <h4 class="game-title">BEEP BEEP!</h4>
-                            <h5 class="game-tagline">Coming through!</h5>
-                            <div class="game-genre-container">
-                                <h5 class="game-genre">Endless</h5>
-                            </div>
-                            <i class="ti ti-brand-html5"></i>
-                        </div>
-                    </div>
-                </a>
-                <a class="game-card" href="https://azraei.itch.io/john-otterman" target="_blank">
-                    <div class="game-content">
-                        <img class="game-thumbnail" src="img/games/john_otterman.png">
-                        <div class="game-data">
-                            <h4 class="game-title">John Otterman</h4>
-                            <h5 class="game-tagline">2D Shooter</h5>
-                            <div class="game-genre-container">
-                                <h5 class="game-genre">Shooter</h5>
-                            </div>
-                            <i class="ti ti-brand-html5 game-platform"></i>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </section>
-    
-    
-        <section class="contact-section" id="contact-section">
-            <h1>CONTACT</h1>
-            <h3>Want to get in touch?</h3>
-            <a class="discord-contact-button" onclick="discord_profile_click()">
-                <div class="discord-contact-banner">
-                    <div class="discord-contact-text-background">
-                        <div class="discord-contact-pfp-container">
-                            <img class="discord-contact-pfp" src="https://static.vecteezy.com/system/resources/previews/006/892/625/large_2x/discord-logo-icon-editorial-free-vector.jpg">
-                        </div>
-                        <h3>LEB<span>#3729</span></h3>
-                    </div>
-                </div>
-            </a>
-        </section>
-        
-        <footer class="footer">
-            
-            <div class="footer-buttons-container">
-                <a class="footer-btn fa-brands fa-twitter" href="https://twitter.com/@DaRealLEB" target="_blank"></a>
-                <a class="footer-btn fa-brands fa-itch-io" href="https://leb-dev.itch.io" target="_blank"><a>
-                <a class="footer-btn fa-brands fa-youtube" href="https://youtube.com/@LEB_Dev" target="_blank"></a>
-            </div>
-
-            <div class="footer-misc-container">
-                <i class="fa-regular fa-copyright footer-item"></i>
-                <a class="footer-item">LEB</a>
-            </div>
-        </footer>
-    </main>
-    
-
 </body>
-
-<script src="index.js"></script>
-
 </html>

@@ -1,663 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 :root {
-    --primary-background-color: #070707;
-    --secondary-background-color: #202020;
-    --tertiary-background-color: #22162B;
-
-    --primary-color: #eee;
-    --secondary-color: #bbc;
-
-
-    --color-1: #FFA159;
-    --color-2: #8F51FF;
-    --color-3: #F929FF;
-    --color-4: #79FFA3;
+    --background-color: #070707;
 }
 
 body {
-    background: linear-gradient(to bottom, var(--primary-background-color), #1C1914 60%, #36213E);
+    background-color: var(--background-color);
     margin: 0px;
-    
-    height: 100%;
-    width: 100%;
 
-    overflow-y: scroll;
-    overflow-x: hidden;
-
-    margin-top: 100px;
-}
-
-body::-webkit-scrollbar {
-    width: 1vmin;
-    background: black;
-}
- 
-body::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, var(--color-1), var(--color-2));
-    border-radius: 10px;
-}
-
-/*THEMING*/
-body.light-theme{
-    --primary-color: #000;
-
-
-    --primary-background-color: #eee;
-    --secondary-background-color: #c5c5c5;
-
-    --color-1: #7F502C;
-    --color-2: #47287F;
-    --color-3: #7B157F;
-    --color-4: #3D7F51;
-}
-
-main {
-    margin-top: 100px;
-}
-
-section {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 5%;
-    margin-bottom: 0px;
-    width: auto;
-    margin-top: 5vmin;
-    padding-top: 150px;
-    flex-wrap: wrap;
-
-    /* background-color: var(--primary-background-color); */
-}
-
-h1, h2, h3, h4, h5, h6, a, i, p, span {
-    color: var(--primary-color);
-    font-family: 'Poppins', sans-serif;
-    margin: 0px;
-    margin-inline: auto;
+    overflow: hidden;
 }
 
 h1 {
-    font-size: 10vmin;
+    color: orange;
+    font-family: "Poppins";
+    font-weight: 800;
+    font-size: 8vmin;
+    margin: 0px;
+
+    animation: header_in 0.8s ease 0.6s backwards;
+}
+
+h3 {
+    color: #AAAAAA;
+    font-family: "Poppins";
     font-weight: 400;
-    font-family: "Poppins", sans-serif;
-    text-align: center;
-}
+    font-size: 2vmin;
 
-h2 {
-    font-size: 6vmin;
-}
+    animation: header_in 0.8s ease 0.8s backwards;
 
-h3, h4 {
-    font-size: 4vmin;
-    font-weight: 300;
-    font-family: "Lexend";
+    margin: 0px;
 }
 
 h5 {
+    color: #777;
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 1.5vmin;
+
+    animation: header_in 0.8s ease 1s backwards;
+
+    margin: 0px;
+}
+
+
+a {
+    color: #94A;
+    font-family: "Poppins";
+    font-weight: 400;
     font-size: 3vmin;
-    font-weight: 200;
-    font-family: "Rubik";
+
+    margin: 0px;
+    margin-top: 10vmin;
+
+    text-decoration: underline;
+
+
+    animation: header_in 0.8s ease 2s backwards;
 }
 
-h6, p {
-    font-size: 2vmin;
-    font-weight: 200;
-    font-family: "Rubik";
-}
-
-span {
-    margin-inline: auto;
-}
-
-i {
-    font-size: 4vmin;
-}
-
-a{
-    cursor: pointer;
-    text-decoration: none;
-}
-
-* {
-    transition: all 300ms ease-in-out;
-}
-
-
-/*
-8888ba.88ba  dP .d88888b   a88888b. 
-88  `8b  `8b 88 88.    "' d8'   `88 
-88   88   88 88 `Y88888b. 88        
-88   88   88 88       `8b 88        
-88   88   88 88 d8'   .8P Y8.   .88 
-dP   dP   dP dP  Y88888P   Y88888P'
-*/
-
-#clipboard-mouse {
-    position: fixed;
-    width: 20vmin;
-    aspect-ratio: 2;
-    background-color: #79FFA3;
-    bottom: 2vmin;
-    right: 2vmin;
-
-    z-index: 100;
+.wrapper {
+    margin: auto;
     display: flex;
+
+    flex-flow: column;
+
+    justify-content: center;
     align-items: center;
 
-    border-radius: 3vmin 3vmin 0px 3vmin;
-    opacity: 0%;
+    margin-top: 10vh;
+
+
+    
 }
 
-#clipboard-mouse h3 {
-    color: black;
-    text-align: center;
+.tape {
+    height: 100px;
+    background: repeating-linear-gradient(45deg, orange 50px, orange 100px, black 100px, black 150px);
+    border: 5px orange solid;
+
+    animation: tape_in 0.8s ease backwards;
 }
 
-.clipboard-active {
-    animation: clipboard-fade 3s ease forwards;
-}
 
-@keyframes clipboard-fade {
+
+
+@keyframes tape_in {
     from {
-        opacity: 0%;
+        width: 0vw;
+        border-right: 100px brown solid;
     }
-    5% {
-        opacity: 100%;
+
+    40% {
+        border-right: 100px brown solid;
     }
-    10% {
-        transform: scale(110%, 110%) translate(-5%, -5%);
+
+    to {
+        width: 100vw;
     }
-    90% {
-        transform: scale(110%, 110%) translate(-5%, -5%);
-    }
-    95% {
-        opacity: 100%;
+}
+@keyframes header_in {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
     }
     to {
-        opacity: 0%
+        transform: translateY(0%);
+        opacity: 1;
     }
-}
-
-/*
-888888ba                    oo                     dP   oo                       888888ba                    
-88    `8b                                          88                            88    `8b                   
-88     88 .d8888b. dP   .dP dP .d8888b. .d8888b. d8888P dP .d8888b. 88d888b.    a88aaaa8P' .d8888b. 88d888b. 
-88     88 88'  `88 88   d8' 88 88'  `88 88'  `88   88   88 88'  `88 88'  `88     88   `8b. 88'  `88 88'  `88 
-88     88 88.  .88 88 .88'  88 88.  .88 88.  .88   88   88 88.  .88 88    88     88    .88 88.  .88 88       
-dP     dP `88888P8 8888P'   dP `8888P88 `88888P8   dP   dP `88888P' dP    dP     88888888P `88888P8 dP       
-                                    .88                                                                      
-                                d8888P
-*/
-.navbar {
-    display: flex;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    padding: 10px;
-    padding-inline: 5vmax;
-    backdrop-filter: blur(1vmin);
-    -webkit-backdrop-filter: blur(1vmin);
-    z-index: 100;
-
-    background: rgba(0, 0, 0, 0.5);
-    border-bottom: 1px solid var(--secondary-background-color);
-
-    position:fixed;
-    
-    align-items: center;
-    justify-content: space-between;
-}
-
-.nav-misc-container {
-    display: flex;
-    justify-content: flex-start;
-}
-
-.nav-buttons-container {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.nav-item {
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: 20px;
-    display: flex;
-    flex-grow: 50px;
-    padding: 5px;
-}
-
-.nav-btn {
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: 20px;
-    display: flex;
-    flex-grow: 50px;
-    padding: 5px;
-    font-size: x-large;
-    border-bottom: 0px #000 dashed;
-    box-sizing: border-box;
-}
-
-.nav-btn:hover {
-    border-bottom: 1px var(--primary-color) solid; 
-}
-
-.nav-menu-opener {
-    margin-top: auto;
-    margin-bottom: auto;
-    display: flex;
-    flex-grow: 50px;
-    padding: 5px;
-    font-size: x-large;
-    border-bottom: 0px #000 dashed;
-    box-sizing: border-box;
-}
-
-.selected {
-    border-bottom: 5px var(--primary-color) solid;
-    box-sizing: border-box;
-}
-
-
-
-
-
-.nav-menu {
-    position: fixed;
-    top: 100px;
-    right: 0px;
-    flex-direction: column;
-    background: black;
-
-    border-radius: 0px 0px 0px 5vmin;
-    padding-inline: 10vmin;
-
-    display: flex;
-
-    justify-content: center;
-    z-index: 5;
-
-    border: 1px solid var(--tertiary-background-color);
-
-    opacity: 0;
-
-    transform: translateY(100%)
-}
-
-.nav-menu-active {
-    opacity: 1;
-    transform: translateY(0px);
-}
-
-.nav-menu-btn {
-    font-size: 4vmin;
-
-    text-align: center;
-
-    margin-top: auto;
-    margin-bottom: auto;
-    padding: 5px;
-    border-bottom: 0px #000 dashed;
-    box-sizing: border-box;
-
-    opacity: inherit
-}
-
-/*
- a88888b.                         dP          
-d8'   `88                         88          
-88        .d8888b. 88d888b. .d888b88 .d8888b. 
-88        88'  `88 88'  `88 88'  `88 Y8ooooo. 
-Y8.   .88 88.  .88 88       88.  .88       88 
- Y88888P' `88888P8 dP       `88888P8 `88888P'
-*/
-.card-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2vmax;
-    flex-direction: row;
-    margin-top: 5vmin;
-  }
-  
-  .card {
-    aspect-ratio: 1.2 / 1;
-    border: 0.3vw solid var(--secondary-background-color);
-    border-radius: 2vw;
-    position: relative;
-    width: 45vmin;
-  }
-  
-  .card:hover:before {
-    background-position: 100% 100%;
-    transform: scale(1.1, 1.05);
-  }
-  
-  .card:hover > .card-icon {
-    color: white; 
-  }
-  
-  .card:hover > .card-content > .card-subtitle{  
-    opacity: 1;
-    transform: translateY(0%);
-    transition: opacity 500ms, transform 400ms ease;
-  }
-  
-  .card:hover > .card-content > .card-title {
-    color: black;
-    transition: color 500ms ease;
-  }
-  
-  .card:before {
-    background: linear-gradient(
-      130deg, 
-      transparent 0% 33%, 
-      var(--color-2) 66%, 
-      var(--color-3) 83.5%, 
-      var(--color-1) 100%
-    );
-    background-position: 0% 0%;
-    background-size: 300% 300%;
-    border-radius: 5vmin;
-    content: "";
-    height: 100%;
-    left: 0px;
-    pointer-events: none;
-    position: absolute;
-    top: 0px;
-    transition: background-position 500ms ease, transform 350ms ease;
-    width: 100%;
-    z-index: 1;
-  }
-  
-  .card-content {
-    background-image: radial-gradient(
-    rgba(255, 255, 255, 0.2) 7%, 
-    transparent 7%);
-    background-position: 0% 0%;
-    background-size: 5vmin 5vmin;
-    height: calc(100% - 10vmin);
-    padding: 5vmin;
-    position: relative;
-    transition: background-position 350ms ease;
-    width: calc(100% - 10vmin);
-    z-index: 2;
-  }
-
-  .card:hover .card-content {
-    background-position: -5% 2%;
-  }
-  
-  .card-title,
-  .card-subtitle {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    margin: 0px;
-    user-select: none;
-    text-align: start;
-  }
-  
-  .card-title {
-    font-size: 5vmin;
-    color: white;
-  }
-  
-  .card-subtitle {
-    font-size: 2.5vmin;
-    margin-top: 1vmin;
-    opacity: 0%;
-    transform: translate(5vmin, 2vmin);
-    color: black;
-  }
-  
-  
-  .card-icon {
-    bottom: 0px;
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 7vmin;
-    left: 0px;
-    margin: 5vmin;
-    position: absolute;
-    transition: transform 300ms, color 250ms ease;
-    z-index: 2;
-    transform: scale(0.6, 0.6);
-  }
-  
-  .card:hover > .card-content > .card-icon {
-    color: rgba(255, 255, 255, 1);
-    transform: scale(1, 1);
-  } 
-
-
-
-/*
- .88888.                                        
-d8'   `88                                       
-88        .d8888b. 88d8b.d8b. .d8888b. .d8888b. 
-88   YP88 88'  `88 88'`88'`88 88oooood8 Y8ooooo. 
-Y8.   .88 88.  .88 88  88  88 88.  ...       88 
- `88888'  `88888P8 dP  dP  dP `88888P' `88888P'
-*/
-
-.games-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 5vmin;
-    flex-direction: row;
-    margin-top: 5vmin;
-}
-
-.game-card {
-    aspect-ratio: 1 / 1.3;
-    border-radius: 2vw;
-    cursor: pointer;
-    position: relative;
-    width: 40vmin;
-    background: linear-gradient(45deg, #FFA159, #8F51FF);
-    
-    text-align: center;
-
-    box-sizing: border-box;
-
-    transition: all 300ms ease;
-
-    text-decoration: none;
-    margin: 0px;
-    padding: 5px;
-}
-
-.game-card:nth-child(2) {
-    background: linear-gradient(45deg, #F929FF, #79FFA3);
-    background-size: 100% 100%;
-}
-
-.game-thumbnail {
-    width: 100%;
-    border: 0.3vw solid var(--secondary-background-color);
-    border-radius: 1vw;
-    box-sizing: border-box;
-}
-
-.game-data {
-    text-align: left;
-    margin-bottom: 2px;
-}
-
-.game-card:hover {
-    transform: translateY(-2vmin) scale(105%, 105%);
-    box-shadow: var(--tertiary-background-color) 0px 0px 100px;
-}
-
-.game-content {
-    height: calc(100% - 5vmin);
-    padding: 2.5vmin;
-    position: relative;
-    transition: background-position 350ms ease;
-    width: calc(100% - 5vmin);
-    z-index: 2;
-
-    border-radius: 2vw;
-
-    background: black;
-}
-
-.game-tagline {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.game-genre-container {
-    display: flex;
-    flex-direction: row;
-    gap: 1vmin;
-}
-
-.game-genre {
-    font-size: 2.5vmin;
-    background-color: rgba(255, 161, 89, 0.3);
-    width: min-content;
-    margin-inline: 0px;
-    padding: 0.75vmin;
-    border-radius: 1vmin;
-}
-
-.game-platform {
-    display: flex;
-}
-
-
-/*
- a88888b.                     dP                       dP   
-d8'   `88                     88                       88   
-88        .d8888b. 88d888b. d8888P .d8888b. .d8888b. d8888P 
-88        88'  `88 88'  `88   88   88'  `88 88'  `""   88   
-Y8.   .88 88.  .88 88    88   88   88.  .88 88.  ...   88   
- Y88888P' `88888P' dP    dP   dP   `88888P8 `88888P'   dP
-*/
-
-
-/*DISCORD*/
-.discord-contact-button {
-    margin:auto;
-    margin-top: 5vmin;
-}
-
-.discord-contact-banner {
-    width: 40vmin;
-    background-color: #111214;
-    padding: 10px;
-    border-radius: 2vmin;
-}
-
-.discord-contact-text-background {
-    background-color: #232428;
-    border-radius: 10vmin;
-    display: flex;
-}
-
-.discord-contact-pfp-container {
-    background-color: black;
-    border-radius: 50%;
-    border: 1vmin #232428 solid;
-    width: 10vmin;
-    aspect-ratio: 1;
-    display: flex;
-}
-
-.discord-contact-pfp {
-    border-radius: 50%;
-    width: 10vmin;
-    aspect-ratio: 1;
-    align-items: center;
-}
-
-.discord-contact-text-background h3 {
-    display: flex;
-    align-items: center;
-    margin: 1vmin;
-    font-size: 4.5vmin;
-}
-
-.discord-contact-text-background h3 span {
-    color: var(--secondary-color);
-}
-
-.discord-contact-button:hover {
-    transform: scale(105%, 105%) translateY(-5%);
-    box-shadow: #000 0px 0px 2vmin;
-    border-radius: 2vmin;
-}
-
-
-
-
-
-
-/*
- 88888888b                     dP                     
- 88                            88                     
-a88aaaa    .d8888b. .d8888b. d8888P .d8888b. 88d888b. 
- 88        88'  `88 88'  `88   88   88ooood8 88'  `88 
- 88        88.  .88 88.  .88   88   88.  ... 88       
- dP        `88888P' `88888P'   dP   `88888P' dP
-*/
-
-.footer {
-    display: flex;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    padding: 20px;
-    padding-inline: 5vmax;
-    z-index: 1;
-
-    background: rgba(0, 0, 0, 0.5);
-    border-top: 1px solid var(--secondary-background-color);
-
-    position:relative;
-    
-    align-items: center;
-    justify-content: center;
-
-    gap: 2vmin;
-}
-
-.footer-misc-container {
-    display: flex;
-    justify-content: flex-start;
-    padding: 10px;
-}
-
-.footer-buttons-container {
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: row;
-    padding: 10px;
-}
-
-.footer-item {
-    margin-top: auto;
-    margin-bottom: auto;
-    display: flex;
-    flex-grow: 50px;
-    padding: 5px;
-    font-size: 2vmin;
-    font-family: "Lexend";
-
-    pointer-events: none;
-}
-
-.footer-btn {
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: 10px;
-    display: flex;
-    flex-grow: 50px;
-    padding: 5px;
-    font-size: 4vmin;
-    border-bottom: 0px #000 dashed;
-    box-sizing: border-box;
 }
