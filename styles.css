@@ -1,114 +1,98 @@
-@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gabarito&family=Poppins&display=swap');
+
 
 :root {
-    --background-color: #070707;
+    --primary-bg: #111;
+    --secondary-bg: #222;
+
+    --primary-color: #F1F0EA;
+    --secondary-color: #E0DDCF;
+
+    --like: #FF2B78;
+
+    --primary-font: "Poppins";
+    --secondary-font: "Gabarito";
 }
 
 body {
-    background-color: var(--background-color);
-    margin: 0px;
+    background: var(--primary-bg);
 
-    overflow: hidden;
-}
-
-h1 {
-    color: orange;
-    font-family: "Poppins";
-    font-weight: 800;
-    font-size: 8vmin;
-    margin: 0px;
-
-    animation: header_in 0.8s ease 0.6s backwards;
-}
-
-h3 {
-    color: #AAAAAA;
-    font-family: "Poppins";
-    font-weight: 400;
-    font-size: 2vmin;
-
-    animation: header_in 0.8s ease 0.8s backwards;
-
-    margin: 0px;
-}
-
-h5 {
-    color: #777;
-    font-family: "Poppins";
-    font-weight: 400;
-    font-size: 1.5vmin;
-
-    animation: header_in 0.8s ease 1s backwards;
-
-    margin: 0px;
-}
-
-
-a {
-    color: #94A;
-    font-family: "Poppins";
-    font-weight: 400;
-    font-size: 3vmin;
-
-    margin: 0px;
-    margin-top: 10vmin;
-
-    text-decoration: underline;
-
-
-    animation: header_in 0.8s ease 2s backwards;
-}
-
-.wrapper {
-    margin: auto;
+    padding: 20px;
     display: flex;
-
-    flex-flow: column;
-
-    justify-content: center;
     align-items: center;
-
-    margin-top: 10vh;
-
-
-    
+    flex-direction: column;
 }
 
-.tape {
-    height: 100px;
-    background: repeating-linear-gradient(45deg, orange 50px, orange 100px, black 100px, black 150px);
-    border: 5px orange solid;
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-color);
 
-    animation: tape_in 0.8s ease backwards;
+    font-family: var(--secondary-font)
+}
+
+p, a {
+    color: var(--secondary-color);
+
+    font-family: var(--secondary-font);
+}
+
+
+#title {
+    text-align: center;
+    font-size: 5em;
+
+    margin: 10px;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    width: 45vw;
+    justify-content: center;
+}
+
+.image-container {
+    width: 100%;
+    aspect-ratio: 1.6 / 0.9;
+
+    background-color: var(--secondary-bg);
+    border-radius: 20px;
 }
 
 
 
+.button-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1vmin;
 
-@keyframes tape_in {
-    from {
-        width: 0vw;
-        border-right: 100px brown solid;
-    }
+    width: 100%;
 
-    40% {
-        border-right: 100px brown solid;
-    }
-
-    to {
-        width: 100vw;
-    }
+    padding-top: 1vmin;
 }
-@keyframes header_in {
-    from {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0%);
-        opacity: 1;
-    }
+
+button.action {
+    height: 4vw;
+    flex: 1;
+
+    border-radius: 20px;
+    background-color: var(--secondary-bg);
+    border: none;
+
+    transition: all ease 300ms;
+}
+
+
+button#like:hover {
+    background-color: var(--primary-color);
+}
+button#like.active {
+    background-color: var(--like);
+}
+i.fa-heart {
+    color: var(--primary-color);
+    font-size: 2em;
+    transition: all ease 300ms;
+}
+button#like:hover i.fa-heart {
+    color: var(--primary-bg);
 }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/789f23fd60.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <title>LEB</title>
+</head>
+<body>
+    <nav class="navbar"></nav>
+    <div class="main-container">
+        <div class="video-player">
+            <video class="video">
+                <source id="main-source" src="vid/ringside.mp4">
+                <p>Your browser doesn't support HTML5 video</p>
+            </video>
+            <div id="video-container">
+                <div id="controls-container">
+                    <div class="controls">
+                        <div class="progress">
+                            <div class="progress__filled"></div>
+                        </div>
+                        <div class="control_button_container">
+                            <div class="controls-left">
+                                <button class="controls__button toggleButton fa-solid fa-play" id="play-button" title="Toggle Play"></button>
+                            </div>
+                            <div class="controls-right">
+                                <button class="controls__button toggleButton fa-solid fa-volume-low" id="mute" title="Toggle Mute"></button>
+                                <button class="controls__button toggleButton fa-solid fa-expand" id="fullscreen" title="Toggle Fullscreen"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+            <script src="video-player.js"></script>
+        </div>
+        <h1 id="video-title">Awesome Title</h1>
+        <div class="button-container">
+            <button class="action" id="like">
+                <i class="fa-solid fa-heart"></i>
+            </button>
+            <a class="action" id="share" href="vid/ringside.mp4" target="_blank" download="ringside">
+                <i class="fa-solid fa-download"></i>
+            </a>
+
+        </div>
+    </div>
+</body>
+
+<script src="index.js"></script>
+
+
+</html>

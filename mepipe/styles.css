@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabarito&family=Poppins&display=swap');
+
+
+:root {
+    --primary-bg: #111;
+    --secondary-bg: #222;
+
+    --primary-color: #F1F0EA;
+    --secondary-color: #E0DDCF;
+
+    --accent: #FF2352;
+
+    --primary-font: "Poppins";
+    --secondary-font: "Gabarito";
+
+    --border-radius: 20px;
+}
+
+body {
+    background: var(--primary-bg);
+
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-color);
+
+    font-family: var(--secondary-font)
+}
+
+p, a {
+    color: var(--secondary-color);
+
+    font-family: var(--secondary-font);
+}
+
+
+nav {
+    height: 9vmin;
+    width: 100%;
+    margin-bottom: 2vmin;
+    position: sticky;
+    
+    background-color: var(--secondary-bg);
+}
+
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    width: 45vw;
+    justify-content: center;
+}
+
+
+
+/*VIDEO*/
+
+.video-player {
+    width: 100%;
+    height: 65vh;
+    aspect-ratio: 1.6 / 0.9;
+
+    margin: 0px;
+    padding: 0px;
+
+    display: flex;
+    justify-content: center;
+}
+
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: relative;
+
+    margin: 0px;
+    padding: 0px;
+
+    box-sizing: border-box;
+    z-index: 1;
+
+    border-radius: var(--border-radius);
+    border: 3px solid var(--secondary-bg);
+}
+
+
+/*VIDEO CONTROLS*/
+
+#video-container {
+    z-index: 1;
+    position: absolute;
+
+    pointer-events: none;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+i#playpause {
+    font-size: 4em;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+
+#controls-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(to top, var(--primary-bg) 0%, transparent 20%);
+    background-size: 100% 150%;
+    transition: background-position 300ms ease;
+
+    border-radius: var(--border-radius);
+    
+    z-index: 2;
+
+    display: flex;
+    align-items: end;
+
+    pointer-events: none;
+}
+.video-player:hover #controls-container {
+    background-position: 0% 100%;
+}
+.video-player:hover .controls {
+    opacity: 1;
+
+    transition: opacity 500ms ease-out;
+}
+
+
+
+.controls {
+    width: 100%;
+    height: 4vmin;
+
+    margin: 0px;
+    padding: 15px;
+
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+
+    pointer-events: initial;
+}
+
+.control_button_container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.controls-left {
+    display: flex;
+    justify-content: left;
+    gap: 5px;
+    flex: 1;
+}
+
+.controls-right {
+    display: flex;
+    justify-content: right;
+    gap: 5px;
+    flex: 1;
+}
+
+.controls__button {
+    margin: 0px;
+
+    border: 0px;
+    height: 100%;
+
+    font-size: 2vmin;
+    color: var(--primary-color);
+    background-color: transparent;
+}
+
+
+/*Progress*/
+.progress {
+    position: relative;
+    height: 5px;
+    margin-bottom: 10px;
+    background: rgba(0,0,0,0.5); 
+    /*background: rgba(255,255,255,0.5);*/
+    cursor: pointer;
+}
+.progress__filled {
+    height: 100%;
+    width: 0%;
+    background: var(--accent);
+}
+
+
+
+
+
+
+
+/*VIDEO DETAILS*/
+
+#video-title {
+    text-align: start;
+    font-size: 7vmin;
+
+    margin: 10px;
+}
+
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1vmin;
+
+    width: 100%;
+
+    padding-top: 1vmin;
+}
+
+.action {
+    height: 4vw;
+    flex: 1;
+
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: var(--border-radius);;
+    background-color: var(--secondary-bg);
+    border: none;
+
+    transition: all ease 300ms;
+}
+
+
+.action#like:hover, .action#share:hover {
+    background-color: var(--primary-color);
+}
+.action#like.active {
+    background-color: var(--accent);
+}
+i.fa-heart, i.fa-download {
+    color: var(--primary-color);
+    font-size: 2em;
+    transition: all ease 300ms;
+
+    
+}
+.action#like:hover i, .action#share:hover i {
+    color: var(--primary-bg);
+}
